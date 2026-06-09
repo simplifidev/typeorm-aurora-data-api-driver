@@ -8,20 +8,20 @@ These steps will guide you through contributing to this project:
 - Clone it and install dependencies
 
 	-	`git clone https://github.com/ArsenyYankovsky/typeorm-aurora-data-api-driver`
-	- `yarn install`
+	- `npm install`
 	- Before running any functional tests run the following commands:
-	  - `yarn build`
-		- `yarn link`
-		- `yarn link typeorm-aurora-data-api-driver`
+	  - `npm run build`
+		- `npm link`
+		- `npm link typeorm-aurora-data-api-driver`
 	- To run functional tests for Postgres `docker-compose -f docker/pg.yml up -d`
 		- `docker-compose -f docker/pg.yml up -d`
-		- `yarn test:pg-func`
+		- `npm run test:pg-func`
 	- To run functional tests for MySQL run the following commands:
 		- `docker-compose -f docker/mysql.yml up -d`
-		- `yarn test:mysql-func`
+		- `npm run test:mysql-func`
 
 - Make sure to lint before committing
-  - `yarn lint`
+  - `npm run lint`
 
 Finally, send a [GitHub Pull Request](https://github.com/ArsenyYankovsky/typeorm-aurora-data-api-driver/compare?expand=1) with a clear list of what you've done (read more [about pull requests](https://help.github.com/articles/about-pull-requests/)). 
 Make sure all of your commits are atomic (one feature per commit) and conventional (https://www.conventionalcommits.org/en/v1.0.0/).
