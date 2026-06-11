@@ -23,11 +23,7 @@ This project is a bridge between [TypeORM](https://typeorm.io/#/) and [Aurora Da
 ### How to use
 
 - [Enable the Data API on your database](https://docs.aws.amazon.com/AmazonRDS/latest/AuroraUserGuide/data-api.html)
-- Install the driver by running either
-```bash
-yarn add typeorm-aurora-data-api-driver
-```
-or
+- Install the driver by running
 ```bash
 npm i --save typeorm-aurora-data-api-driver
 ````
@@ -124,9 +120,9 @@ Let's start with a simple case where you don't need to touch any code in the Typ
 #### Initial Setup
 
 1. Fork this repository on GitHub and check out your fork 
-2. Run `yarn` to install dependencies
+2. Run `npm install` to install dependencies
 3. Install TypeORM by running `npm i --no-save typeorm`. You can also install a specific version of the ORM.
-4. Run `yarn build` to build the code of the driver itself. You will also need to run this command when you make changes in the files under `/src` directory.
+4. Run `npm run build` to build the code of the driver itself. You will also need to run this command when you make changes in the files under `/src` directory.
 
 After that, you can run tests to validate your setup.
 
@@ -151,13 +147,13 @@ docker-compose -f docker/mysql.yml up -d
 For Postgres:
 
 ```shell
-yarn test:pg-func
+npm run test:pg-func
 ```
 
 For MySQL
 
 ```shell
-yarn test:mysql-func
+npm run test:mysql-func
 ```
 
 #### Adding a Feature / Fixing a Bug
@@ -173,13 +169,13 @@ and this driver.
 To develop against a local TypeORM repository, you'll need to replace 
 the third step from the initial setup section with the following:
 
-1. In the driver directory, run `yarn link`
+1. In the driver directory, run `npm link`
 2. Fork the TypeORM repository and check out your fork
 3. In the TypeORM directory, run `npm i` to install TypeORM dependencies
 4. In the TypeORM directory, run `npm run package` to build TypeORM package
-5. Under the `build/package` directory in the TypeORM project, run the following command to make sure the TypeORM is not linked: `yarn unlink`
-6. Under the `build/package` directory in the TypeORM project, run two following commands: `yarn link` and `yarn link typeorm-aurora-data-api-driver`
-7. In the driver directory, run `yarn link typeorm`
+5. Under the `build/package` directory in the TypeORM project, run the following command to make sure the TypeORM is not linked: `npm unlink`
+6. Under the `build/package` directory in the TypeORM project, run two following commands: `npm link` and `npm link typeorm-aurora-data-api-driver`
+7. In the driver directory, run `npm link typeorm`
 
 What this will do is create symlinks where the driver will use a locally built TypeORM package and a locally built TypeORM package will use a locally built driver.
 
